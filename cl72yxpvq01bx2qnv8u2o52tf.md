@@ -38,19 +38,19 @@ Mình làm việc từ **8h-8h30** cho đến **18h-18h30** hàng ngày. Công c
 
 # 2. Sequence diagram
 
-![sync-data.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661054516525/1p9yUr8Hp.png align="left")
+![sync-data.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131457506/j-StQnKF-.png align="left")
 
 **Note** : [App Zepp](https://play.google.com/store/apps/details?id=com.huami.watch.hmwatchmanager&hl=vi&gl=US) - ứng dụng lưu trữ thông tin sức khoẻ được đo từ smart watch. Dữ liệu sẽ được tự đồng bộ từ smart watch -> app **Zepp** -> app **Strava**
 
-![bot-notify-run.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661055825925/9o-UxU9Ba.png align="left")
+![bot-notify-run.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131468037/d80lZ99z8r.png align="left")
 
 **Note** : [Open Weather Map](https://openweathermap.org/api) - cung cấp api miễn phí để lấy thông tin thời tiết theo **vị trí, khu vực**.
 
-![bot-notify-summary.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661056227777/wBLo13Iyr.png align="left")
+![bot-notify-summary.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131484421/WX0SJh_us.png align="left")
 
 **Note** : [Strava](https://developers.strava.com/docs/reference/) - lưu trữ, chia sẻ hoạt động thể dục, thể thao dễ hiểu hơn là mạng xã hội dành cho người chơi thể thao
 
-![bot-notify-statistical.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661056613836/4J2TMm5rf.png align="left")
+![bot-notify-statistical.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131500027/nb78dDopu.png align="left")
 
 # 3. Tạo bot Slack
 <center><iframe src="https://giphy.com/embed/YYXzsMW5RLBhI946xA" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/YYXzsMW5RLBhI946xA"></a></p></center>
