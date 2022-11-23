@@ -1,4 +1,4 @@
-## About me
+# About me
 
 Cảm ơn bạn đã ghé thăm blog của mình.
 
@@ -10,5 +10,6 @@ Khi chuẩn bị các bài viết, mình sẽ trình bày vấn đề, giải ph
 1. Xây dựng hệ thống website, ứng dụng mình sẽ build Back-End : Golang và Front-End: ReactJS, TypeScript.
 2. Một số bài toán đơn giản, hay ho về Học máy (Machine learning) mình dùng Python để build ^^
 3. Algorithm: Golang.
+4. Design Patterns
 
 Nếu bạn chưa có nhiều kinh nghiệm về các ngôn ngữ trên, đừng quá lo lắng vì mỗi bài sẽ chỉ sử dụng một vài kỹ thuật cơ bản. Mình rất vui được trao đổi thêm với các bạn hoặc các góp ý cải thiện ở phần Comment cuối mỗi bài.
