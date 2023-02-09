@@ -1,4 +1,4 @@
-## Two sum - Một bài toán kinh điển cho bất kì ai mới bước chân vào luyện algorithm
+# Two sum - Một bài toán kinh điển cho bất kì ai mới bước chân vào luyện algorithm
 
 [Two sum](https://leetcode.com/problems/two-sum/) Một bài toán kinh điển cho bất kì ai mới bước chân vào luyện algorithm.
 
