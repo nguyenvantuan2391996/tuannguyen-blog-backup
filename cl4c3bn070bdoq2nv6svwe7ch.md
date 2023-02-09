@@ -1,4 +1,4 @@
-## [Phần 1] Trò chơi Audition - Xây dựng chức năng cơ bản với JavaScript
+# [Phần 1] Trò chơi Audition - Xây dựng chức năng cơ bản với JavaScript
 
 # 1. Giới thiệu
 
@@ -278,5 +278,5 @@ audio.onended = function () {
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/MwCteIDIZNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-- Website game : https://audition-js.herokuapp.com/audition.html
-- Source code : https://github.com/nguyenvantuan2391996/audition-js
+- Website game : https://nguyenvantuan2391996.github.io/game-development/games/audition/home.html
+- Source code : https://github.com/nguyenvantuan2391996/game-development/tree/master/games/audition
