@@ -205,10 +205,6 @@ function compareKeyPressAndRandom(key) {
 
 Đây là 1 số hình ảnh và video kết quả sau khi build code xong nhé mọi người ^^
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1675925452820/0de62a6a-1b83-4456-9c94-3f8f745d909d.png align="center")
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1675925457133/1d2d461d-3f19-4cf5-b732-94630aec9ac0.png align="center")
-
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/us5uUZF5m4M"></iframe></center>
 
 * Website game: https://nguyenvantuan2391996.github.io/game-development/games/audition/home.html
