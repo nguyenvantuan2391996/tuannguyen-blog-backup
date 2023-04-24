@@ -1,4 +1,15 @@
-# Caro game - Developing game modes for Humans and Computers with JavaScript
+---
+title: "Caro game - Developing game modes for Humans and Computers with JavaScript"
+seoTitle: "Caro game - Developing game modes for Humans and Computers"
+seoDescription: "Caro is a simple game that we all played as kids. we make it fancy, we can create two computers, and they can play with them"
+datePublished: Mon Feb 27 2023 14:33:10 GMT+0000 (Coordinated Universal Time)
+cuid: clemx6mbt000109mh9ow08ogx
+slug: caro-game-developing-game-modes-for-humans-and-computers-with-javascript
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1677498616829/0cc415b4-4c99-407b-8945-9dba23809915.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1677508331408/402355b9-5a13-4246-babc-72780fe9ed4b.png
+tags: javascript, game-development, games, gomoku, caro
+
+---
 
 **Tháng ba bất chợt một ngày trắng tinh hoa sưa về đây... Hà Nội, Chủ Nhật 26/02/2023...**
 
