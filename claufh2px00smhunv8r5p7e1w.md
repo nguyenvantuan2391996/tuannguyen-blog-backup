@@ -1,4 +1,14 @@
-# [ Design Patterns ] - Builder pattern with Golang
+---
+title: "[ Design Patterns ] - Builder pattern with Golang"
+seoTitle: "[ Design Patterns ] - Builder pattern with Golang"
+seoDescription: "My team must build one application for selling offline fruits to one restaurant. The customer will select fruits and add them to their cart"
+datePublished: Thu Nov 24 2022 02:00:45 GMT+0000 (Coordinated Universal Time)
+cuid: claufh2px00smhunv8r5p7e1w
+slug: design-patterns-builder-pattern-with-golang
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1669204519015/nsOv4CdnY.png
+tags: design-patterns, go, golang, developer, builder-pattern
+
+---
 
 **Ha Noi, on Thursday 24/11/2022**
 
@@ -6,10 +16,10 @@ At the moment, a little speech to give to the present...
 
 ![ha-noi.jpeg](https://cdn.hashnode.com/res/hashnode/image/upload/v1669212284101/M5RWVJEGV.jpeg align="left")
 
-*Hà Nội mùa này vắng những cơn mưa<br>
-Cái rét đầu đông khăn em hiu hiu gió lạnh<br>
-Hoa sữa thôi rơi ta bên nhau một chiều tan lớp<br>
-Đường Cổ Ngư xưa chầm chậm bước ta về...😥😥😥* 
+*Hà Nội mùa này vắng những cơn mưa  
+Cái rét đầu đông khăn em hiu hiu gió lạnh  
+Hoa sữa thôi rơi ta bên nhau một chiều tan lớp  
+Đường Cổ Ngư xưa chầm chậm bước ta về...😥😥😥*
 
 Ha Noi is approaching winter, when there will be no rain. I'm sitting in my room and writing this post. Today's temperature in Ha Noi is 25°C, cloudy, and starting to get colder than previous days. The weather is appropriate for lonely people 😉😉😉
 
@@ -25,29 +35,38 @@ Reference : [Builder pattern](https://refactoring.guru/design-patterns/builder/g
 
 ![uml-of-builedr.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1669214955214/Rvx7uMTpu.jpg align="left")
 
-1. **Product** : These are the resultant objects. Products will have different results. It will be determined by how the object is constructed. 
+1. **Product** : These are the resultant objects. Products will have different results. It will be determined by how the object is constructed.
+    
 2. **Concreate Builder** : Provides implementation for Builder. It is an object able to construct other objects. Constructs and assembles parts to build the objects.
+    
 3. **Builder** : Abstract interface for creating objects (product) and getting concreate builder.
+    
 4. **Director** : The class will call order-by-step to build objects.
+    
 
 # III. Implement
 
-## 1. The problem
+## 1\. The problem
 
-*My team must build one application for selling offline fruits to one restaurant. The customer will select fruits and add them to their cart after going to the counter and requiring payment. The employee of the restaurant will scan the QR code of the fruit, and your application will display information about the fruit's price, amount, and discount. <br>The application must calculate the amount of money that the customer must pay for the restaurant according to the rules below.*
+*My team must build one application for selling offline fruits to one restaurant. The customer will select fruits and add them to their cart after going to the counter and requiring payment. The employee of the restaurant will scan the QR code of the fruit, and your application will display information about the fruit's price, amount, and discount.  
+The application must calculate the amount of money that the customer must pay for the restaurant according to the rules below.*
 
 **Example rules :**
 
 | Name | Amount | Price | Discount |
-| --- | --- | ------------ | ----------- |
-| Orange | More than 10 | Price = Price - $5 <br>**eg :** each fruit's price = $49.99 => Price = $49.99 - $5 = 44.99$ | Discount = Discount + 2% <br>**eg :** each fruit's discount = 10% => Discount = 10 + 2 = 12% |
+| --- | --- | --- | --- |
+| Orange | More than 10 | Price = Price - $5  
+**eg :** each fruit's price = $49.99 =&gt; Price = $49.99 - $5 = 44.99$ | Discount = Discount + 2%  
+**eg :** each fruit's discount = 10% =&gt; Discount = 10 + 2 = 12% |
 | Orange | Less than 10 | fruit's price | fruit's discount |
-| Apple | More than 10 | Price = Price - $10 <br>**eg :** each fruit's price = $49.99 => Price = $49.99 - $10 = 39.99$ | Discount = Discount + 5% <br>**eg :** each fruit's discount = 10% => Discount = 10 + 5 = 15% |
+| Apple | More than 10 | Price = Price - $10  
+**eg :** each fruit's price = $49.99 =&gt; Price = $49.99 - $10 = 39.99$ | Discount = Discount + 5%  
+**eg :** each fruit's discount = 10% =&gt; Discount = 10 + 5 = 15% |
 | Apple | Less than 10 | fruit's price | fruit's discount |
 
-**Note :** *The restaurant will have far more fruit, and the rules will be far more complicated. *
+**Note :** \*The restaurant will have far more fruit, and the rules will be far more complicated. \*
 
-## 2. Problem solving
+## 2\. Problem solving
 
 I think you will code as in the example below. We will use if-else to check the fruit's name and process logic for it in each case.
 
@@ -84,9 +103,9 @@ When the restaurant adds one new fruit, updates, or adds one new rule, we must h
 
 So, to resolve the problem, we will use the builder design pattern.
 
-## 3. Implement builder design pattern
+## 3\. Implement builder design pattern
 
-### 3.1. ifruit_builder.go : Builder interface
+### 3.1. ifruit\_builder.go : Builder interface
 
 ```golang
 package builder
@@ -115,7 +134,7 @@ func GetFruitBuilder(fruitName string) IFruitBuilder {
 }
 ```
 
-### 3.2. orange_builder.go: Concreate builder for orange
+### 3.2. orange\_builder.go: Concreate builder for orange
 
 ```golang
 package concreate_builder
@@ -155,7 +174,7 @@ func (o *OrangeBuilder) ToOutputMoney() *product.InfoOutput {
 }
 ```
 
-### 3.3. apple_builder.go: Concreate builder for apple
+### 3.3. apple\_builder.go: Concreate builder for apple
 
 ```golang
 package concreate_builder
@@ -275,7 +294,7 @@ func main() {
 
 Ouput :
 
-```
+```c
 Pay for orange : $142329
 Pay for apple : $134797.5
 
@@ -284,6 +303,6 @@ Process finished with the exit code 0
 
 # IV. Source code
 
-- Source code builder pattern : [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/builder-pattern)
-
-- Source almost popular design patterns : [Design patterns](https://github.com/nguyenvantuan2391996/design-pattern-golang-example)
+* Source code builder pattern : [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/builder_pattern)
+    
+* Source almost popular design patterns : [Design patterns](https://github.com/nguyenvantuan2391996/design-pattern-golang-example)
