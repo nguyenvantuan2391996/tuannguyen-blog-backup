@@ -282,6 +282,6 @@ Done
 
 # III. Source code
 
-* Source code decorator pattern: [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/decorator-pattern)
+* Source code decorator pattern: [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/decorator_pattern)
     
 * Source almost popular design patterns: [Design patterns](https://github.com/nguyenvantuan2391996/design-pattern-golang-example)
