@@ -223,6 +223,6 @@ Process finished with the exit code 0
 
 # III. Source code
 
-* Source code factory pattern: [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/observer_pattern)
+* Source code observer pattern: [Example with Golang](https://github.com/nguyenvantuan2391996/design-pattern-golang-example/tree/master/observer_pattern)
     
 * Source almost popular design patterns: [Design patterns](https://github.com/nguyenvantuan2391996/design-pattern-golang-example)
