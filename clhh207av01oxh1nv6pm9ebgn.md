@@ -5,6 +5,7 @@ seoDescription: "Observer pattern giúp bạn định nghĩa một cơ chế đ�
 datePublished: Wed May 10 2023 02:00:39 GMT+0000 (Coordinated Universal Time)
 cuid: clhh207av01oxh1nv6pm9ebgn
 slug: design-patterns-observer-pattern-with-golang
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1683687486519/8c00fc78-cbe1-4a9f-8ea1-46a215672f41.png
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1683653939782/eceb06fd-7948-438a-845b-476af80e68a0.png
 tags: design-patterns, observer-pattern
 
