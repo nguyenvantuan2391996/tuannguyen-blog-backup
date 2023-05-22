@@ -5,6 +5,7 @@ seoDescription: "Lua là một ngôn ngữ lập trình nhúng (embeddable) nh�
 datePublished: Mon May 22 2023 02:00:39 GMT+0000 (Coordinated Universal Time)
 cuid: clhy7affq06v1g7nvcoex12gy
 slug: lua-script-trong-redis-suc-manh-va-ung-dung
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1684721871361/a04b138e-4373-4a59-9e60-3e07c34aed1f.jpeg
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1684644937328/7275f4bb-fa18-4b59-be88-f4eb906588a6.jpeg
 tags: redis, golang, lua, lua-script
 
