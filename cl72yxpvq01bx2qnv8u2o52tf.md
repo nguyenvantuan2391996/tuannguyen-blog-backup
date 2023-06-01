@@ -1,12 +1,22 @@
-# [Cron Job] - Tạo bot Slack nhắc nhở chạy bộ tập thể dục với Golang
+---
+title: "[Cron Job] - Tạo bot Slack nhắc nhở chạy bộ tập thể dục với Golang"
+seoTitle: "[Cron Job] - Tạo bot Slack nhắc nhở chạy bộ tập thể dục với Golang"
+seoDescription: "Mình vẫn luôn ước ao sẽ có một người nào đó sẽ luôn nhắc nhở bản thân mình đúng giờ trong mỗi ngày: " Đứng lên ! Đi thể dục đi. ""
+datePublished: Sun Aug 21 2022 06:48:54 GMT+0000 (Coordinated Universal Time)
+cuid: cl72yxpvq01bx2qnv8u2o52tf
+slug: cron-job-tao-bot-slack-nhac-nho-chay-bo-tap-the-duc-voi-golang
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1661060718700/T9rygTRF4.png
+tags: go, golang, slack, webhooks, cronjob
+
+---
 
 **Hà Nội, Chủ nhật, 21/08/2022... Vài lời gửi gắm thời gian**
 
 Nhạc sĩ : [Trịnh Công Sơn](https://vi.wikipedia.org/wiki/Tr%E1%BB%8Bnh_C%C3%B4ng_S%C6%A1n)
 
-*Hà Nội mùa thu, mùa thu Hà Nội<br>
-Mùa hoa sữa về thơm từng cơn gió<br>
-Mùa cốm xanh về thơm bàn tay nhỏ<br>
+*Hà Nội mùa thu, mùa thu Hà Nội  
+Mùa hoa sữa về thơm từng cơn gió  
+Mùa cốm xanh về thơm bàn tay nhỏ  
 Cốm sữa vỉa hè thơm bước chân qua...*
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660971611187/RiJs9ReTC.png align="left")
@@ -15,16 +25,15 @@ Tôi nhớ thu *Hà Nội* quá, những đêm nghêu ngao hát cùng em trên n
 
 Mùi rượu thoang thoảng quyện theo từng cơn gió. Em đổ vào lòng tôi, má hây hây hồng, miệng thơm mùi rượu, mắt em khẽ cong. *Hà Nội* đẹp nhất vào ngày ấy - ngày *Thu* có em...
 
-<center><iframe src="https://giphy.com/embed/rIaGJR7T7OFhG2nnoa" width="480" height="389" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/transparent-rIaGJR7T7OFhG2nnoa"></a></p></center>
+<center><iframe src="https://giphy.com/embed/rIaGJR7T7OFhG2nnoa" width="480" height="389" class="giphy-embed"></iframe><p><a href="https://giphy.com/gifs/transparent-rIaGJR7T7OFhG2nnoa"></a></p></center>
 
-
-# 1. Giới thiệu tổng quan
+# 1\. Giới thiệu tổng quan
 
 Tập **thể dục** có thể ngăn tích tụ mỡ thừa và duy trì giảm cân. Khi hoạt động thể chất, đốt cháy calo, hoạt động càng mạnh, càng nhiều calo bị đốt cháy.
 
 Hoạt động thể chất tích cực thúc đẩy lượng **Lipoprotein** tỷ trọng cao **(HDL)** – mỡ máu tốt và giảm **triglyceride, Lipoprotein** tỷ trọng thấp **(LDLc)** không lành mạnh, tác dụng kép này giúp máu lưu thông dễ dàng và giảm nguy cơ bệnh tim mạch.
 
-<center><iframe src="https://giphy.com/embed/rCnTndmAWbldia3bgs" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rCnTndmAWbldia3bgs"></a></p></center>
+<center><iframe src="https://giphy.com/embed/rCnTndmAWbldia3bgs" width="480" height="270" class="giphy-embed"></iframe><p><a href="https://giphy.com/gifs/rCnTndmAWbldia3bgs"></a></p></center>
 
 Hiện tại, mình là một **developer** nên phải ngồi máy tính 8h một ngày. Vì vậy tập thể dục, thể thao đối với mình là việc rất cần thiết sau ngày làm căng thẳng. Tuy đã trang bị rất nhiều đồ công nghệ phục vụ cho việc này như: Đồng hồ thông minh, app [Strava](https://www.strava.com/) đã mua license 😃, google fit,... nhưng việc thể dục của mình vẫn không được đều đặn khi có nhiều lý do đến từ chủ quan lẫn khách quan.
 
@@ -33,14 +42,17 @@ Mình vẫn luôn ước ao sẽ có một người nào đó sẽ luôn nhắc 
 Mình làm việc từ **8h-8h30** cho đến **18h-18h30** hàng ngày. Công cụ trao đổi với mọi người trong team đa phần dùng [Slack](https://slack.com/) nên ở đây mình tạo **bot** trên Slack để alert nhắc nhở và tổng kết thành biểu đồ hàng tháng. Các chức năng chính của **bot** như sau:
 
 1. **9h hàng ngày**, bot crawl thông tin trên account [Strava](https://www.strava.com/) của mình rồi alert thông tin mình chạy được ngày hôm qua. VD: **Số km, thời gian chạy, tốc độ chạy,...**
+    
 2. **9h30 Ngày đầu tiên của hàng tháng**, bot thống số liệu từng ngày mình chạy rồi generate ra biểu đồ alert lại cho mình.
+    
 3. **17h30 hàng ngày**, bot kiểm tra thời tiết hôm nay rồi alert cho mình thông tin đó và dựa vào đó để gợi ý xem có nên ra ngoài chạy thể dục không?
+    
 
-# 2. Sequence diagram
+# 2\. Sequence diagram
 
 ![sync-data.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131457506/j-StQnKF-.png align="left")
 
-**Note** : [App Zepp](https://play.google.com/store/apps/details?id=com.huami.watch.hmwatchmanager&hl=vi&gl=US) - ứng dụng lưu trữ thông tin sức khoẻ được đo từ smart watch. Dữ liệu sẽ được tự đồng bộ từ smart watch -> app **Zepp** -> app **Strava**
+**Note** : [App Zepp](https://play.google.com/store/apps/details?id=com.huami.watch.hmwatchmanager&hl=vi&gl=US) - ứng dụng lưu trữ thông tin sức khoẻ được đo từ smart watch. Dữ liệu sẽ được tự đồng bộ từ smart watch -&gt; app **Zepp** -&gt; app **Strava**
 
 ![bot-notify-run.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131468037/d80lZ99z8r.png align="left")
 
@@ -52,8 +64,9 @@ Mình làm việc từ **8h-8h30** cho đến **18h-18h30** hàng ngày. Công c
 
 ![bot-notify-statistical.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661131500027/nb78dDopu.png align="left")
 
-# 3. Tạo bot Slack
-<center><iframe src="https://giphy.com/embed/YYXzsMW5RLBhI946xA" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/YYXzsMW5RLBhI946xA"></a></p></center>
+# 3\. Tạo bot Slack
+
+<center><iframe src="https://giphy.com/embed/YYXzsMW5RLBhI946xA" width="480" height="360" class="giphy-embed"></iframe><p><a href="https://giphy.com/gifs/YYXzsMW5RLBhI946xA"></a></p></center>
 
 Để tạo một con **bot** có thể gửi tin nhắn vào channel thì cần tạo một webhook trong Slack. Khi có trigger hành động thì con **bot** sẽ tự động post message tới channel thông qua webhook này. Cách tạo thì mọi người tham khảo link [Incoming Webhook](https://team-tbo7018.slack.com/apps/new/A0F7XDUAZ-incoming-webhooks) của Slack.
 
@@ -99,9 +112,9 @@ func sendMessage(webhook string, message *model.SlackMessage) error {
 	logrus.Info("successfully sent notification...")
 	return nil
 }
-``` 
+```
 
-# 4. Tạo cron job với Golang
+# 4\. Tạo cron job với Golang
 
 ## 4.1. Tài liệu cho cron job
 
@@ -113,21 +126,26 @@ Còn nếu tự build phần cron job thì trong tương lai gần hy vọng mì
 
 Cron job có dạng
 
-```
+```c
 cron = "X X X X X" (5 kí tự)
-``` 
+```
+
 Tương ứng
 
-```
+```c
 <phút> <giờ> <ngày trong tháng> <tháng> <ngày trong tuần>
-``` 
+```
+
 Các bạn có thể đọc thêm [cron job ở đây nhé](https://en.wikipedia.org/wiki/Cron)
 
 Dựa vào định nghĩa trên ta implement ra được cấu hình cho **bot** để gửi message
 
-1. **9h hàng ngày** -> CRON_NOTIFY_SUMMARY=0 9 * * *
-2. **9h30 Ngày đầu tiên của hàng tháng** -> CRON_NOTIFY_STATISTICAL=30 9 1 * *
-3. **17h30 hàng ngày** -> CRON_NOTIFY_RUN=30 17 * * *
+1. **9h hàng ngày** -&gt; CRON\_NOTIFY\_SUMMARY=0 9 \* \* \*
+    
+2. **9h30 Ngày đầu tiên của hàng tháng** -&gt; CRON\_NOTIFY\_STATISTICAL=30 9 1 \* \*
+    
+3. **17h30 hàng ngày** -&gt; CRON\_NOTIFY\_RUN=30 17 \* \* \*
+    
 
 ## 4.3. Implement code
 
@@ -176,16 +194,15 @@ func main() {
 	logrus.Info("Start cron")
 	c.Run()
 }
-``` 
+```
 
-# 5. Bot nhắc nhở chạy thể dục
+# 5\. Bot nhắc nhở chạy thể dục
 
 **17h30 hàng ngày**, bot kiểm tra thời tiết hôm nay rồi alert cho mình thông tin đó và dựa vào đó để gợi ý xem có nên ra ngoài chạy thể dục không?
 
 ## 5.1. Kiểm tra thời tiết hiện tại
 
-Để lấy các thông tin về thời tiết hiện tại theo khu vực mình sử dụng API của 
-[openweathermap](https://openweathermap.org) - Nó cho **1,000 API calls per day for free** vậy là quá đủ dùng rồi đúng không nào 😄😄😄. Các bạn có thể đọc tài liệu api ở đây nhé -> [Document API](https://openweathermap.org/api/one-call-3) openweathermap
+Để lấy các thông tin về thời tiết hiện tại theo khu vực mình sử dụng API của [openweathermap](https://openweathermap.org) - Nó cho **1,000 API calls per day for free** vậy là quá đủ dùng rồi đúng không nào 😄😄😄. Các bạn có thể đọc tài liệu api ở đây nhé -&gt; [Document API](https://openweathermap.org/api/one-call-3) openweathermap
 
 ```golang
 func GetWeatherInfo(url string, params *model.ParamOpenWeather) (*model.OpenWeather, error) {
@@ -239,7 +256,8 @@ func GetWeatherInfo(url string, params *model.ParamOpenWeather) (*model.OpenWeat
 
 	return openWeather, nil
 }
-``` 
+```
+
 Ở đây tạm thời mình chỉ cần quan tâm tới nhiệt độ và thời tiết: **Mưa, nắng, nhiều mây**. Dựa vào các thông tin đó để alert có nên chạy bộ không.
 
 ## 5.2. Implement code
@@ -278,23 +296,23 @@ func (b *BotNotify) ProcessNotifyRun() error {
 	}
 	return client.SendMessageSlack(b.cfg.WebhookSlack, message)
 }
-``` 
+```
 
 Kết quả nhận được sau khi tới **17h30 hàng ngày**
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1660992065420/FnhgEH-TB.png align="left")
 
-# 6. Bot thông báo thông tin chạy bộ
+# 6\. Bot thông báo thông tin chạy bộ
 
 **9h hàng ngày**, bot crawl thông tin trên account [Strava](https://www.strava.com/) của mình rồi alert thông tin mình chạy được ngày hôm qua. VD: **Số km, thời gian chạy, tốc độ chạy,...**
 
 ## 6.1. Crawl thông tin Strava
 
-Mình có smart watch để đo thông tin chạy thể dục. Mỗi lần chạy xong sẽ tự sync dữ liệu lên [Strava](https://www.strava.com/). Để lấy các thông tin về chi tiết hoạt động của ngày hôm đó mình dùng API của Strava -> [Docment API](https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities)
+Mình có smart watch để đo thông tin chạy thể dục. Mỗi lần chạy xong sẽ tự sync dữ liệu lên [Strava](https://www.strava.com/). Để lấy các thông tin về chi tiết hoạt động của ngày hôm đó mình dùng API của Strava -&gt; [Docment API](https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities)
 
 Video tham khảo thêm ***Intro and accessing Strava API***
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/sgscChKfGyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/sgscChKfGyg"></iframe></center>
 
 ```golang
 func GetStravaActivityInfo(params *model.ParamStrava) ([]*model.StravaActivity, error) {
@@ -348,7 +366,8 @@ func GetStravaActivityInfo(params *model.ParamStrava) ([]*model.StravaActivity, 
 
 	return stravaActivity, nil
 }
-``` 
+```
+
 Mình sẽ lấy 3 hoạt động gần nhất trên **Strava** bởi vì 1 ngày chắc mình thể dục nhiều nhất là 3 lần : **Sáng, Chiều, Tối** nhưng thường là 1 lần 1 ngày vào buổi tối thôi :LOL: 😄😄😄
 
 ## 6.2. Implement code
@@ -358,6 +377,7 @@ Kết hợp code api lấy thông tin hoạt động trên **Strava** và **bot*
 Trong phần xử lý alert này khi lấy được thông tin hoạt động trên Strava **bot** bắn message và đồng thời lưu lại thông tin này để tiện hết 1 tháng mình sẽ thống kê lại kết quả vào **generate ra chart** 😄😄😄
 
 Table **statisticals** lưu thông tin thống kê dữ liệu
+
 ```sql
 CREATE TABLE `statisticals` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -365,7 +385,7 @@ CREATE TABLE `statisticals` (
   `metadata` json DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
-``` 
+```
 
 ```golang
 func (b *BotNotify) ProcessNotifySummary() error {
@@ -428,13 +448,13 @@ func (b *BotNotify) ProcessNotifySummary() error {
 	}
 	return nil
 }
-``` 
+```
 
 Kết quả nhận được sau khi tới **9h hàng ngày**
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661052361600/KvtdjKms-.png align="left")
 
-# 7. Bot thống kê dữ liệu hàng tháng
+# 7\. Bot thống kê dữ liệu hàng tháng
 
 **9h30 Ngày đầu tiên của hàng tháng**, bot thống số liệu từng ngày mình chạy rồi generate ra biểu đồ alert lại cho mình.
 
@@ -499,7 +519,8 @@ func UploadImage(params *model.ParamUploadImage) (*model.ImageInfo, error) {
 
 	return imgInfo, nil
 }
-``` 
+```
+
 Sau khi gọi api để lưu ảnh mình sẽ nhận được url của ảnh mới được upload đó từ api trả về.
 
 ## 7.2. Generate biểu đồ thống kê dữ liệu
@@ -547,8 +568,9 @@ func (s *StatisticalDomain) GetBase64StringChart(queries map[string]interface{})
 	// Encode as base64.
 	return base64.StdEncoding.EncodeToString(buf.Bytes()), sumKilometers, nil
 }
-``` 
-Sau khi, mình thực hiện generate chart từ dữ liệu lưu được ở database được file của hình ảnh -> encodebase64 image -> truyền encode base64 string vào api upload ảnh được xử lý ở bước 7.1 để lấy được link đường dẫn của hình ảnh.
+```
+
+Sau khi, mình thực hiện generate chart từ dữ liệu lưu được ở database được file của hình ảnh -&gt; encodebase64 image -&gt; truyền encode base64 string vào api upload ảnh được xử lý ở bước 7.1 để lấy được link đường dẫn của hình ảnh.
 
 ## 7.3. Implement code
 
@@ -585,16 +607,17 @@ func (b *BotNotify) ProcessNotifyStatistical() error {
 	}
 	return client.SendMessageSlack(b.cfg.WebhookSlack, message)
 }
-``` 
+```
+
 Kết quả nhận được sau khi tới **9h30 Ngày đầu tiên của hàng tháng**. Hiện tại, cũng đến khi ngồi viết bài này thì mình vẫn chưa thu thập được 1 tháng data nên mình fake data gen tạm chart cho mọi người dễ hình dung nhé 😄
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1661008718262/wUYzqI7a_.png align="left")
 
-# 8. Kết luận
+# 8\. Kết luận
 
 Sau quá trình giới thiệu cũng như hướng dẫn làm một con **bot** đơn giản phục vụ cho cuộc sống cá nhân hàng ngày, mình hi vọng mọi người sẽ thấy thú vị và bớt nhàm chán sau những ngày code căng thẳng, mệt mỏi.
 
-Source code : https://github.com/nguyenvantuan2391996/be-topsis
+Source code : https://github.com/nguyenvantuan2391996/be-project
 
 Tiện thể **Tiki** đang có chương trình [đi bộ lên mặt trăng săn thưởng 1 tỷ đồng](https://tiki.vn/khuyen-mai/di-bo-nhan-thuong/?utm_source=tiki360_homepage). Mọi người tham giá hốt xu nào 😄😄😄
 
