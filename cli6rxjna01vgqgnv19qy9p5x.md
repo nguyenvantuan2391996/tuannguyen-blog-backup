@@ -5,8 +5,8 @@ seoDescription: "Ứng dụng nghe nhạc - nơi sẽ dẫn bạn vào một th�
 datePublished: Sun May 28 2023 02:00:39 GMT+0000 (Coordinated Universal Time)
 cuid: cli6rxjna01vgqgnv19qy9p5x
 slug: xay-dung-ung-dung-nghe-nhac-truc-tuyen-youtube-voi-javascript
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1684689726200/67542d89-9a02-4fac-ba61-12b2e3f823a4.png
-ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1684689797369/9368bd87-4c09-4ddf-9cf7-f1175ee6affc.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685692826598/cef57441-7c72-4fd4-90d0-fd64267c617c.jpeg
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1685692841081/67061eb2-9be4-4e38-82d6-6cfd4dc5a2b7.jpeg
 tags: js, javascript, musicplayer
 
 ---
