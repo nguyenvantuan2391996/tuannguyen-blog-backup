@@ -372,7 +372,7 @@ async function getInfoSong(id) {
 
 Hai function này chỉ là gọi API của Youtube theo từ khoá tìm kiếm. Các bạn đọc document của Youtube là okela. Không vấn đề gì về phần này cả.
 
-## 3\. Chức năng tìm kiếm bài hát
+## 4\. Chức năng tìm kiếm bài hát
 
 Ở phần này mình có dùng thư viện sweet alert để cho giao diện đẹp hơn. Các bước cũng đơn giản. Đầu tiên chúng ta sẽ có hàm **getInfoTheSong** hàm này có chức năng gọi hàm xử lý lấy thông tin bài hát ở phía trên và hiển thị các giá trị lên giao diện màn hình.
 
@@ -433,7 +433,7 @@ document.getElementById("btn-search").addEventListener("click", (event) => {
 });
 ```
 
-## 4\. Chức năng play/pause
+## 5\. Chức năng play/pause
 
 Ở bước xử lý này ta kiểm tra nếu trạng thái và bật tắt nhạc tương ứng với trạng thái hiện tại
 
@@ -455,7 +455,7 @@ document.getElementById("btn-play-song").addEventListener("click", (event) => {
 })
 ```
 
-## 5\. Chức năng chọn bài trước và bài kế tiếp
+## 6\. Chức năng chọn bài trước và bài kế tiếp
 
 Trước khi tới chi tiết từng chức năng. Ta có hàm lấy vị trí mới của bài hát
 
