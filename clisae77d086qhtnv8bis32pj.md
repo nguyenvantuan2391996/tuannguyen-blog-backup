@@ -464,6 +464,6 @@ chrome.runtime.onMessage.addListener(async function (
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/qaKVsPGY2gg"></iframe></center>
 
-* Link tải extension: https://chrome.google.com/webstore/detail/ifjohhllghacnfeeocgnolojolodcfhl/preview?hl=vi&authuser=1
+* Link tải extension: https://chrome.google.com/webstore/detail/display-gif-image-extensi/ifjohhllghacnfeeocgnolojolodcfhl?hl=en&authuser=1
     
 * Source code: https://github.com/nguyenvantuan2391996/extensions-development/tree/master/display-gif-image-extension
