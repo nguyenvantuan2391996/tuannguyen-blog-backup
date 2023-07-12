@@ -46,7 +46,7 @@ Mình làm việc từ 8h-8h30 cho đến 18h-18h30 hàng ngày. Công cụ trao
 
 **Note**: Các bước thực hiện của Bot mình đã mô tả ở biểu đồ tuần tự phía bên trên. Có 3 actor: Scheduler, LeetCode, Slack Webhook. Sau khi lấy dữ liệu từ Leetcode bot sẽ tạo message và gửi vào Slack Webhook.
 
-# 3\. Tạo bot Slack
+# 4\. Tạo bot Slack
 
 ![Animated GIF](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXp0b3Y5ZDA5NzF6aWI2eDMzcnQ5MWlnaGh1NGNzMWJvOTdieG91ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YYXzsMW5RLBhI946xA/giphy.gif align="center")
 
@@ -96,7 +96,7 @@ func sendMessage(webhook string, message *model.SlackMessage) error {
 }
 ```
 
-# 4\. Tạo cron job với Golang
+# 5\. Tạo cron job với Golang
 
 Ở phần này nhanh thì mình dùng luôn thư viện trên github **robfig/cron/v3** được vote 10k starts để tạo cron job của Golang.
 
@@ -118,7 +118,7 @@ c := cron.New()
 	})
 ```
 
-# 5\. Lấy thông tin leetcode
+# 6\. Lấy thông tin leetcode
 
 Ở trang leetcode bật F12 và bắt request lấy thông daily leetcoding. Ở đây leetcode họ dùng Graphql. Sau khi lấy được API mình implement client để gọi API lấy thông tin thôi.
 
@@ -184,7 +184,7 @@ func GetDailyCodingChallenge(url string, params *model.ParamDailyCodingChallenge
 }
 ```
 
-# 6\. Bot Slack gửi bài daily
+# 7\. Bot Slack gửi bài daily
 
 Sau khi khởi tạo cron job chạy lúc 9AM hàng ngày và lấy được thông tin từ leetcode rồi thì việc cuối cùng chúng ta chỉ cần truyền đủ thông tin input. Khi nhận được response thì fill data vào message rồi gọi API webhook Slack là hoàn thành con bot rồi đó.
 
@@ -213,7 +213,7 @@ func (b *BotNotify) ProcessNotifyDailyLeetCodingChallenge(ctx context.Context) e
 }
 ```
 
-# 7\. Một số hình ảnh kết quả
+# 8\. Một số hình ảnh kết quả
 
 Sau khi thực hiện các bước ở trên thì thành quả chúng ta nhận được sẽ như sau. Dưới đây là 1 số hình ảnh
 
@@ -221,7 +221,7 @@ Sau khi thực hiện các bước ở trên thì thành quả chúng ta nhận 
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1687593139562/a7b8404f-62b1-40fc-b3f3-4ec3ec7a6a05.png align="center")
 
-# 8\. Kết luận
+# 9\. Kết luận
 
 Sau quá trình giới thiệu cũng như hướng dẫn làm một con bot đơn giản phục vụ cho cuộc sống cá nhân hàng ngày, mình hi vọng mọi người sẽ thấy thú vị và bớt nhàm chán sau những ngày code căng thẳng, mệt mỏi.
 
