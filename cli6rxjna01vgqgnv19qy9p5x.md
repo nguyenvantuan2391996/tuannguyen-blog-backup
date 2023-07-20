@@ -1,10 +1,10 @@
 ---
-title: "Xây dựng ứng dụng nghe nhạc trực tuyến youtube với JavaScript"
+title: "Xây dựng ứng dụng nghe nhạc trực tuyến với JavaScript"
 seoTitle: "Xây dựng ứng dụng nghe nhạc trực tuyến youtube với JavaScript"
 seoDescription: "Ứng dụng nghe nhạc - nơi sẽ dẫn bạn vào một thế giới âm nhạc tuyệt vời và đa dạng. Với sự phát triển không ngừng của công nghệ, nghe nhạc đã trở nên dễ dàng"
 datePublished: Sun May 28 2023 02:00:39 GMT+0000 (Coordinated Universal Time)
 cuid: cli6rxjna01vgqgnv19qy9p5x
-slug: xay-dung-ung-dung-nghe-nhac-truc-tuyen-youtube-voi-javascript
+slug: xay-dung-ung-dung-nghe-nhac-truc-tuyen-voi-javascript
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1685692826598/cef57441-7c72-4fd4-90d0-fd64267c617c.jpeg
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1685692841081/67061eb2-9be4-4e38-82d6-6cfd4dc5a2b7.jpeg
 tags: js, javascript, musicplayer
