@@ -1,10 +1,11 @@
 ---
 title: "Hướng dẫn quyết toán thuế thu nhập cá nhân"
 seoTitle: "Hướng dẫn quyết toán thuế thu nhập cá nhân"
-seoDescription: "Đăng nhập: https://thuedientu.gdt.gov.vn/ => Cá nhân. Em được công ty tạo cho tài khoản lâu rồi nên mấy thím thử nút đăng ký nhé "
+seoDescription: "Đăng nhập: https://thuedientu.gdt.gov.vn/ => Cá nhân. Em được công ty tạo cho tài khoản lâu rồi nên mấy thím thử nút đăng ký nhé"
 datePublished: Thu Apr 04 2024 15:23:07 GMT+0000 (Coordinated Universal Time)
 cuid: cluldzapo000208laaaqigx8f
 slug: huong-dan-quyet-toan-thue-thu-nhap-ca-nhan
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1712244826660/993a4b37-b2a6-4b4c-b0a3-64f8dee3a0a7.jpeg
 ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1712244136969/bd35f984-37b9-4215-a050-b6006532ca43.jpeg
 tags: tax
 
