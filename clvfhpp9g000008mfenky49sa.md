@@ -11,7 +11,7 @@ tags: redis, golang, lua, lua-script
 
 ---
 
-# I. Giới thiệu về Redis
+# I. Redis Introduce
 
 Redis is a database management system with key-value data in memory. It is open-source. Redis means "**Remote Dictionary Server**" and now it has developed to become a system with a lot of functions. It supports pretty much any type of data, and we can use it for a lot of targets.
 
@@ -99,7 +99,7 @@ func initRedis() (*redis.Client, error) {
 
 ## 2\. Handle without Lua Script
 
-* Step 1: Get the value of "**counter**". If **counter** is not existed then **counter** \= "0".
+* Step 1: Get the value of "**counter**". If **counter** is not existed then **counter** = "0".
     
 * Step 2: Convert "**counter**" to number.
     
