@@ -2,7 +2,7 @@
 title: "Facial Recognition - Hệ thống nhận diện khuôn mặt"
 seoTitle: "Facial Recognition - Hệ thống nhận diện khuôn mặt"
 seoDescription: "Nhận diện khuôn mặt - mình thấy nó đang được ứng dụng rất nhiều và khả năng đáp ứng về độ chính xác cũng như ổn định đã stable khá nhiều rồi."
-datePublished: Thu Jan 09 2025 17:19:00 GMT+0000 (Coordinated Universal Time)
+datePublished: Thu Jan 09 2025 17:00:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm5pleuls000l09lg0iai8qa9
 slug: facial-recognition-he-thong-nhan-dien-khuon-mat
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1736442553942/6983a930-4378-464b-ad82-7e77f3f24007.jpeg
